@@ -80,9 +80,9 @@ today = datetime.date.today()
 someday = datetime.date(year, month, day)
 diff = someday - today
 
-t = (abs(diff.days))
+daysold = (abs(diff.days))
 
-print("\nI bet you didn't know that you are exactly", t, "days old!")
+print("\nI bet you didn't know that you are exactly", daysold, "days old!")
 
 print("\nPress Enter to continue,", firstname, end='')
 print(".")
