@@ -40,6 +40,8 @@ print
 print("Did you know that there are", lenfirst, "letters in your first name and", lenlast, "letters in your last name? That makes", lenfirst + lenlast, "letter in all!!!")
 print
 
+#ask if user wants to see name backwards and don't take no for an answer
+
 print("\nWould you like to see your name printed backwards?")
 
 while answer[: 1] != "y" and answer[: 1] != "Y":
@@ -54,6 +56,8 @@ i = lenwhole
 print
 print
 
+#print name backwards with a quarter of a second wait for each letter displayed
+
 import time
 while i > 0:
     print(wholename[i - 1: i], end = "")
@@ -62,41 +66,39 @@ while i > 0:
 
 print(end = '\n')
 
+#ask for user's birthdate
+
 print("\nNow, tell me your birthdate.")
 month = int(input('First, the number of the month (1-12): '))
 day = int(input('Next, the day: '))
 year = int(input('And finally, the year: '))
 
-if year > 2000:
-    year = year - 2000
-if year > 1900:
-    year = year - 1900
+#calculate difference between birthday and today, in days
 
-y1 = 365 * (year - 1) + (year - 1) / 4 + 1
-
-if year % 4 != 0:
-    daysinmonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-else:
-    daysinmonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
-d1 = y1
-
-for j in range(0, month - 1):
-    d1 = d1 + daysinmonth[j]
-
-d1 = d1 + day
-
-age = d1
-
-import time
 import datetime
+today = datetime.date.today()
+someday = datetime.date(year, month, day)
+diff = someday - today
 
-print("\nToday's date is ", )
+t = (abs(diff.days))
 
-yearnow = int(datetime.date.today().strftime("%Y"))
-monthnow = (datetime.date.today().strftime("%B"))
-daynow = (datetime.date.today().strftime("%d"))
+print("\nI bet you didn't know that you are exactly", t, "days old!")
 
-print(monthnow)
-print(daynow)
-print(yearnow)
+print("\nPress Enter to continue,", firstname, end='')
+print(".")
+
+input("...")
+
+#make 'em read like it's 1983!
+
+print("\n\nAs you can tell by this program, a computer programmed with Python")
+print("is able to do many different things. It can count the letters in")
+print("your name; it can remember the letters in your name and print them")
+print("in reverse order; and, of course, it can do mathematical calculations")
+print("like figuring out how many days old you are. It is")
+print("important that you realize, however, that everything that")
+print("happened was a result of a series of instructions (a program)")
+print("written by a person. Soon you will be writing your own programs!")
+print("\nBest of luck!")
+print("\nNow,", firstname, end='')
+print(", please continue to the next lesson.")
