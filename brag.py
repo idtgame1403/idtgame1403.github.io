@@ -1,4 +1,4 @@
-#DEMO "BRAG!" — A BASIC program from the past.
+#DEMO "BRAG!" -- A BASIC program from the past.
 
 #declare blank strings
 
@@ -56,13 +56,13 @@ i = lenwhole
 print
 print
 
-#print name backwards with a quarter of a second wait for each letter displayed
+#print name backwards ##with a quarter of a second wait for each letter displayed
 
 import time
 while i > 0:
     print(wholename[i - 1: i], end = "")
     i = i - 1
-    time.sleep(.25)
+##  time.sleep(.25)
 
 print(end = '\n')
 
